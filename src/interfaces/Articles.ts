@@ -8,6 +8,11 @@ export interface Articles {
   published_at: Date;
   updated_at: Date;
   featured: boolean;
-  launches: any[];
+  launches: Launch[];
   events: any[];
+}
+
+export interface Launch {
+  launch_id: string;
+  provider: string;
 }

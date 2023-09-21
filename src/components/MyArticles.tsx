@@ -23,16 +23,20 @@ const MyArticles = () => {
   }, []);
 
   return (
-    <Container>
-      <h1 className="mb-5">My Articles</h1>
-      <Row>
-        {articles.map(article => (
-          <Col xs={12} md={4} lg={3} key={`id-${article.id}`}>
-            <ArticlesCard article={article} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <>
+      {articles && (
+        <Container>
+          <h1 className="mb-5">My Articles</h1>
+          <Row>
+            {articles.map(article => (
+              <Col xs={12} md={4} lg={3} key={`id-${article.id}`}>
+                <ArticlesCard article={article} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      )}
+    </>
   );
 };
 
