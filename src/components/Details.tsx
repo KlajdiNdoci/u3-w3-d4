@@ -27,20 +27,24 @@ const Details = () => {
   const publishedDate = singleArticle?.published_at ? new Date(singleArticle.published_at) : null;
 
   return (
-    <Container>
-      <h1 className="mb-5">Details</h1>
-      <img className="card-img-top mb-3" src={singleArticle?.image_url} alt={singleArticle?.news_site} />
-      <div className="text-start">
-        <h2 className="mb-3">{singleArticle?.title}</h2>
-        <p className="mb-3">{singleArticle?.summary}</p>
-      </div>
-      <Row>
-        <div className="d-flex justify-content-between">
-          <div> Published on: {publishedDate?.toDateString()}</div>
-          <Badge>{singleArticle?.news_site}</Badge>
-        </div>
-      </Row>
-    </Container>
+    <>
+      {singleArticle && (
+        <Container>
+          <h1 className="mb-5">Details</h1>
+          <img className="card-img-top mb-3" src={singleArticle?.image_url} alt={singleArticle?.news_site} />
+          <div className="text-start">
+            <h2 className="mb-3">{singleArticle?.title}</h2>
+            <p className="mb-3">{singleArticle?.summary}</p>
+          </div>
+          <Row>
+            <div className="d-flex justify-content-between">
+              <div> Published on: {publishedDate?.toDateString()}</div>
+              <Badge>{singleArticle?.news_site}</Badge>
+            </div>
+          </Row>
+        </Container>
+      )}
+    </>
   );
 };
 
